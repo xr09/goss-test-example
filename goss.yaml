@@ -30,12 +30,12 @@ http:
     status: 200
     body:
     - Hello, World!
-  http://127.0.0.1:5000/redir:
-    status: 302
-    no-follow-redirects: true
   http://127.0.0.1:5000/hi/flask:
     status: 200
     body:
     - Hi, flask!
+  http://127.0.0.1:5000/redir:
+    status: 302
+    no-follow-redirects: true
   http://127.0.0.1:5000/fake-url:
     status: 404

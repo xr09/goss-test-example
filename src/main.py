@@ -7,7 +7,7 @@ def hello_world():
 
 @app.route('/hi/<name>')
 def hi(name):
-    return 'Hey, {}!'.format(name)
+    return 'Hi, {}!'.format(name)
 
 @app.route('/redir')
 def other():

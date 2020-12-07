@@ -1,0 +1,41 @@
+user:
+  flask:
+    exists: true
+    uid: 1000
+    gid: 1000
+    groups:
+    - flask
+    home: /home/flask
+    shell: /bin/ash
+file:
+  /srv/app/main.py:
+    exists: true
+    mode: "0644"
+    owner: flask
+    group: flask
+    filetype: file
+    contains: []
+package:
+  py3-pip:
+    installed: true
+  python3:
+    installed: true
+port:
+  tcp:5000:
+    listening: true
+    ip:
+    - 0.0.0.0
+http:
+  http://127.0.0.1:5000:
+    status: 200
+    body:
+    - Hello, World!
+  http://127.0.0.1:5000/redir:
+    status: 302
+    no-follow-redirects: true
+  http://127.0.0.1:5000/hi/flask:
+    status: 200
+    body:
+    - Hi, flask!
+  http://127.0.0.1:5000/fake-url:
+    status: 404

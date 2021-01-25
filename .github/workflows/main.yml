@@ -35,3 +35,10 @@ jobs:
 
       - name: Execute Goss tests
         run: dgoss run test-example:dev
+
+      - name: Run Snyk to check Docker image for vulnerabilities
+        uses: snyk/actions/docker@master
+        env:
+            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+            image: test-example:dev

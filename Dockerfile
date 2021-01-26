@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.7.3
 
 ARG APP_HOME=/srv/app
 
